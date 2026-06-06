@@ -1,0 +1,3 @@
+You should have been redirected.
+
+[If not, click here to continue.](../parallel.html)

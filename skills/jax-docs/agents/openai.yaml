@@ -1,0 +1,4 @@
+interface:
+  display_name: "JAX Docs"
+  short_description: "Ground JAX answers in docs.jax.dev"
+  default_prompt: "Use $jax-docs to answer a JAX programming question with docs-grounded context."

@@ -1,0 +1,30 @@
+{
+  "base_url": "https://docs.jax.dev/en/latest/",
+  "failed": [],
+  "inventory_routes": 1709,
+  "missing_inventory_routes": [],
+  "missing_searchindex_routes": [],
+  "objects_total": 3985,
+  "objects_url": "https://docs.jax.dev/en/latest/objects.inv",
+  "routes_failed": 0,
+  "routes_fetched": 1713,
+  "searchindex_routes": 1706,
+  "searchindex_url": "https://docs.jax.dev/en/latest/searchindex.js",
+  "skipped_not_found": [
+    {
+      "error": "HTTP Error 404: Not Found",
+      "route": "jax.experimental.host_callback",
+      "url": "https://docs.jax.dev/en/latest/jax.experimental.host_callback.html"
+    },
+    {
+      "error": "HTTP Error 404: Not Found",
+      "route": "design_notes/jax_versioning",
+      "url": "https://docs.jax.dev/en/latest/design_notes/jax_versioning.html"
+    },
+    {
+      "error": "HTTP Error 404: Not Found",
+      "route": "/index",
+      "url": "https://docs.jax.dev/index.html"
+    }
+  ]
+}
