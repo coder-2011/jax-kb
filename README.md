@@ -4,6 +4,14 @@ A local knowledge base for you and your agents, all about JAX. It mirrors the sh
 
 The crawler discovers routes from the JAX Sphinx search index, Python object inventory, and same-site HTML links. It converts fetched HTML pages to Markdown with `pandoc`, then builds a local TF-IDF retrieval index over page chunks, headings, and API inventory records.
 
+## Agent Setup
+
+Agents should start here:
+
+[agents-setup.md](agents-setup.md)
+
+That file contains the clone/update flow, dependency checks, skill installation, verification commands, query strategy, and rules for answering from this KB.
+
 ## Setup Guide
 
 This repo is meant to ship with the docs, chunks, and index already built. Setup is: get the repo, make sure the small Python dependency set is available, then run a query.
@@ -96,19 +104,7 @@ python3 scripts/query.py "How do I debug NaNs in jit?" --top-k 5 --max-chars 180
 
 ### 6. Use the agent skill
 
-The bundled skill lives at:
-
-```text
-skills/jax-docs/
-```
-
-Use it in whichever way your agent runtime supports:
-
-- Point the agent at this repo and tell it to use `skills/jax-docs/`.
-- Copy the skill folder into your normal skills directory.
-- Symlink the skill folder into your normal skills directory.
-
-For a pasteable agent instruction, use `PROMPT.md`.
+Agent-specific setup lives in `agents-setup.md`. Use that file as the handoff for any agent that needs to use this KB.
 
 ### 7. Rebuild only when needed
 
