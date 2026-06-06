@@ -47,6 +47,13 @@ def normalize_text(text: str) -> str:
     return text.strip()
 
 
+def clean_heading(title: str) -> str:
+    title = re.sub(r"\s+#$", "", title).strip()
+    title = re.sub(r"\[\\?#\]\([^)]*\)", "", title).strip()
+    title = re.sub(r"\[¶\]\(.*?\)", "", title).strip()
+    return title
+
+
 def markdown_headings(text: str) -> list[dict]:
     headings: list[dict] = []
     stack: list[str] = []
@@ -55,8 +62,7 @@ def markdown_headings(text: str) -> list[dict]:
         if not match:
             continue
         level = len(match.group(1))
-        title = re.sub(r"\s+#$", "", match.group(2)).strip()
-        title = re.sub(r"\[¶\]\(.*?\)", "", title).strip()
+        title = clean_heading(match.group(2))
         if not title:
             continue
         stack = stack[: level - 1]

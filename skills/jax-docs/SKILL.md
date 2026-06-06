@@ -29,6 +29,13 @@ Use JSON when another tool or script will consume the results:
 python3 scripts/query.py "QUESTION" --json --top-k 8
 ```
 
+JSON is compact by default. Use `--full-text` only when the full indexed chunk text is needed, and use `--max-chars` to adjust excerpt length:
+
+```bash
+python3 scripts/query.py "QUESTION" --json --full-text --top-k 4
+python3 scripts/query.py "QUESTION" --top-k 8 --max-chars 1800
+```
+
 ## Query Strategy
 
 For broad questions, keep the user wording broad and ask for more results:

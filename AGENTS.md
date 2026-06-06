@@ -30,6 +30,13 @@ Use JSON when you need machine-readable retrieval output:
 python3 scripts/query.py "QUESTION HERE" --json --top-k 8
 ```
 
+JSON output is compact by default so agents can read several results without pulling duplicate full chunks into context. Add `--full-text` only when you need the full indexed text, and use `--max-chars` to tune excerpt length:
+
+```bash
+python3 scripts/query.py "QUESTION HERE" --json --full-text --top-k 4
+python3 scripts/query.py "QUESTION HERE" --top-k 8 --max-chars 1800
+```
+
 ## Broad Questions
 
 For broad questions, ask broad questions directly. The query tool is tuned to route these into section-level docs records and relevant chunks:

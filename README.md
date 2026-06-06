@@ -82,6 +82,18 @@ JSON output for agents or scripts:
 python3 scripts/query.py "Explain pytrees at a high level" --json --top-k 8
 ```
 
+`--json` is compact by default: it returns citations, routes, scores, headings, and focused excerpts. Use `--full-text` only when a downstream script needs the full chunk/search text:
+
+```bash
+python3 scripts/query.py "Explain pytrees at a high level" --json --full-text --top-k 4
+```
+
+Use `--max-chars` when an agent needs shorter or longer excerpts:
+
+```bash
+python3 scripts/query.py "How do I debug NaNs in jit?" --top-k 5 --max-chars 1800
+```
+
 ### 6. Use the agent skill
 
 The bundled skill lives at:

@@ -54,7 +54,8 @@ Use:
 - Read multiple returned results.
 - For broad questions, use broad queries with `--top-k 8` or higher.
 - For API, class, method, or property questions, include the exact name.
-- Use `--json` when structured retrieval output is useful.
+- Use `--json` when structured retrieval output is useful; it is compact by default.
+- Use `--full-text` only when you need the full indexed text, and `--max-chars` when excerpts should be longer or shorter.
 - Cite docs URLs/routes from the returned results.
 - If the KB is not enough, say what is docs-grounded and what is outside reasoning.
 
@@ -63,4 +64,5 @@ Example queries:
 python3 scripts/query.py "What parts of JAX matter most for writing fast numerical code?" --top-k 10
 python3 scripts/query.py "What does jax.grad do?" --top-k 8
 python3 scripts/query.py "Explain pytrees at a high level" --json --top-k 8
+python3 scripts/query.py "How do I debug NaNs in jit?" --top-k 5 --max-chars 1800
 ```
